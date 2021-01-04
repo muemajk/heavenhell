@@ -1,0 +1,481 @@
+root {
+    --heaven-color: rgb(248, 3, 3, 0.962);
+    --hell-color: rgba(14, 0, 164, 0.962);
+    --shadow-color: rgb(14, 22, 25);
+    --logo-prominent-color: rgb(14, 22, 25);
+    --darkmode: rgb(14, 15, 18);
+    --normalmode: rgb(248, 234, 213);
+  }
+
+  @-webkit-keyframes heavenslide {
+      100%{right:0;}
+  }
+  @keyframes heavenslide {
+      100%{right:0}
+  }
+body{
+    margin: 0;
+    height: 100%;
+    overflow: scroll;
+    padding: 0;
+}
+nav {
+    position: absolute;
+    width: 100%;
+    top:0;
+    display: flex;
+    justify-content: space-between;
+    background:transparent;
+    height: 40px;
+}
+nav div{
+    margin: 0;
+    padding: 0;
+}
+nav div h1 {
+    -webkit-text-stroke-width: 0.6px;
+    -webkit-text-stroke-color: white;
+    font-size:1.5em;
+    text-transform: uppercase;
+}
+ nav ul {
+    width: 50%;
+    float: right;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    color: white;
+}
+nav ul li {
+    list-style: none;
+    text-shadow: 0.4px 0.7px 2px rgba(0, 0, 0, 0.783);
+
+}
+.main {
+    background: linear-gradient( rgb(248, 3, 3,   0.962),rgba(14, 0, 164,  0.962));
+}
+.container {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    background: transparent;
+}
+
+.darkmode{
+    background-color: black
+}
+.darkmode::after{
+    background:black
+}
+.darkmode::before {
+    background:black
+}
+
+
+.hellmode{
+    width: 100%;
+    height: 100%;
+    background-color: linear-gradient(rgb(248, 3, 3, 0.962),rgba(255, 255, 255, 0.962));
+    transition: background-color 1s linear;
+}
+.hellmode::after{
+    height: 100%;
+    transition: background 1s linear;
+    background:linear-gradient( rgb(248, 3, 3, 0.962),rgba(255, 255, 255, 0.962));
+}
+.hellmode::before {
+    height: 100%;
+    transition:  background 1s linear;
+    background:linear-gradient(rgb(248, 3, 3, 0.962), rgba(255, 255, 255, 0.962));
+}
+
+.heavenmode{
+    width: 100%;
+    height: 100%;
+    background-color: linear-gradient( rgba(14, 0, 164,  0.962),rgba(255, 255, 255, 0.962));
+    -moz-transition: background-color .1s linear;
+    transition: background-color 1s linear;
+}
+.heavenmode::after{
+    height: 100%;
+    background:linear-gradient( rgba(14, 0, 164,  0.962),rgba(255, 255, 255, 0.962));
+    -moz-transition: background .1s linear;
+    transition:  background 1s linear;
+}
+.heavenmode::before {
+    width: 100%;
+    height: 100%;
+    background:linear-gradient( rgba(14, 0, 164,  0.962),rgba(255, 255, 255, 0.962));
+    -moz-transition: background .1s linear;
+    transition:  background 1s linear;
+}
+.container .content {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.slider {
+    background: url("image10.png") center no-repeat;
+    width: 100%;
+    border: none;
+    top: 80px;
+    height: 20rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0.88888;
+    z-index: 1;
+    transition: 0.2s;
+    margin: 40px auto;
+    border-radius: 2em;
+    margin: 0;
+    overflow: hidden;
+    
+}
+.content h1 {
+    font-size: 1em;
+    height: 40%;
+    font-family: Verdana;
+    z-index: 1;
+}
+.store {
+    width: 150px;
+    height: 70px;
+    z-index: 1;
+    transition: 0.2s;
+    padding: 0;
+    border-radius: 2em;
+    margin: 20px auto;
+    box-shadow: 20px 20px 50px rgb(0,0,0, 0.5); 
+    background: rgba(255, 255, 255, 0.105);
+    overflow: hidden;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    border-top: 1px solid rgb(255,255,255, 0.5);
+    border-left: 1px solid rgb(255,255,255, 0.5);
+    border-bottom: 1px solid;
+    border-bottom-color:rgb(0,0,0, 0.5);
+    border-right: 1px solid;
+    border-right-color:  rgb(0,0,0, 0.5);
+    backdrop-filter: blur(5px);
+
+}
+.hell, .heaven {
+    width: 50%;
+    height: 100%;
+    border:none;
+    background: none;
+    margin: 0;
+    outline: none;
+}
+.hell:hover {
+    background: rgb(248, 3, 3, 0.509);
+}
+.heaven:hover {
+    background: rgba(14, 0, 164, 0.509);
+}
+.hellh1 {
+    display: block;
+    -webkit-text-stroke-width: 0.1px;
+    -webkit-text-stroke-color: white;
+}
+
+.heavenh1 {
+    display: block;
+    -webkit-text-stroke-width: 0.1px;
+    -webkit-text-stroke-color: white;
+
+}   
+.wrapper {
+    width: 100%;
+    height: 100%;
+    display: grid;
+    margin-top: 20px;
+    grid-gap: 20px;
+    grid-template-columns: auto;
+    grid-template-rows: repeat(auto-fill, minmax(450px));
+    grid-template-areas:
+    'a '
+    'b';
+    
+}
+.wrapper .merch, .wrapper .ticket {
+    width: 80%;
+    height: 450px;
+    z-index: 1;
+    transition: 0.2s;
+    padding: 0;
+    border-radius: 2em;
+    box-shadow: 20px 20px 50px rgb(0,0,0, 0.5); 
+    background: rgba(255, 255, 255, 0.105);
+    overflow: hidden;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    border-top: 1px solid rgb(255,255,255, 0.5);
+    border-left: 1px solid rgb(255,255,255, 0.5);
+    border-bottom: 1px solid;
+    border-bottom-color:rgb(0,0,0, 0.5);
+    border-right: 1px solid;
+    border-right-color:  rgb(0,0,0, 0.5);
+    backdrop-filter: blur(5px);
+}
+.merch {
+    grid-area: a;
+}
+.ticket {
+    grid-area: b;
+}
+@media (min-width: 700px){
+        
+    header {
+        position: absolute;
+        width: 100%;
+        z-index: 1;
+        top:0;
+        color: black;
+        display: flex;
+        justify-content: space-between;
+        background: transparent;
+        height: 50px;
+    }
+    nav div{
+        margin: 0;
+        padding: 0;
+    }
+    nav div h1 {
+        display: block;
+    }
+    nav ul {
+        width: 30%;
+        float: right;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        color: white;
+    }
+    nav ul li {
+        list-style: none;
+
+    }
+    .main{
+        padding: 40px 10px;
+    }
+    .container {
+        width: 100%;
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        background: transparent;
+        -moz-transition: background-color .1s linear;
+        transition:  background-color 1s linear;
+    }
+    .csontainer::before {
+        content: '';
+        position: absolute;
+        top:0;
+        left: 0;
+        width:50%;
+        border: none;
+        height: 100%;
+        z-index: -1;
+        background: transparent;
+        -moz-transition: background .1s linear;
+        transition:  background 1s linear;
+    }
+    .cosntainer::after {
+        background:transparent;
+        -moz-transition: background .1s linear;
+        transition:  background 1s linear;
+        content: '';
+        position: absolute;
+        top:0;
+        right: 0;
+        border: none;
+        width: 50%;
+        z-index: -1;
+        height: 100%;
+    }
+
+    .darkmode{
+        background-color: black
+    }
+    .darkmode::after{
+        background:black
+    }
+    .darkmode::before {
+        background:black
+    }
+
+
+    .hellmode{
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(rgb(248, 3, 3, 0.962),rgba(255, 255, 255, 0.962));
+        transition: background-color 1s linear;
+    }
+    .hellmode::after{
+        height: 100%;
+        transition: background 1s linear;
+        background:linear-gradient( rgb(248, 3, 3, 0.962),rgba(255, 255, 255, 0.962));
+    }
+    .hellmode::before {
+        height: 100%;
+        transition:  background 1s linear;
+        background:linear-gradient(rgb(248, 3, 3, 0.962), rgba(255, 255, 255, 0.962));
+    }
+
+    .heavenmode{
+        width: 100%;
+        height: 100%;
+        background: linear-gradient( rgba(14, 0, 164,  0.962),rgba(255, 255, 255, 0.962));
+        -moz-transition: background-color .1s linear;
+        transition: background-color 1s linear;
+    }
+    .heavenmode::after{
+        height: 100%;
+        background:linear-gradient( rgba(14, 0, 164,  0.962),rgba(255, 255, 255, 0.962));
+        -moz-transition: background .1s linear;
+        transition:  background 1s linear;
+    }
+    .heavenmode::before {
+        width: 100%;
+        height: 100%;
+        background:linear-gradient( rgba(14, 0, 164,  0.962),rgba(255, 255, 255, 0.962));
+        -moz-transition: background .1s linear;
+        transition:  background 1s linear;
+    }
+    .container .content {
+        position: relative;
+        width: 100%;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    .slider {
+        background: url("image10.png") center no-repeat;
+        width: 100%;
+        border: none;
+        top: 80px;
+        height: 20rem;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        opacity: 0.88888;
+        z-index: 1;
+        transition: 0.2;
+        margin: 40px auto;
+        border-radius: 2em;
+        margin: 0;
+        overflow: hidden;
+        
+    }
+    .content h1 {
+        font-size: 1.3em;
+        height: 40%;
+        font-family: Verdana;
+        z-index: 1;
+    }
+    .store {
+        width: 150px;
+        height: 70px;
+        z-index: 1;
+        transition: 0.2s;
+        padding: 0;
+        border-radius: 1em;
+        margin: 20px auto;
+        box-shadow: 20px 20px 50px rgb(0,0,0, 0.5); 
+        background: rgba(255, 255, 255, 0.05);
+        overflow: hidden;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        border-top: 1px solid rgb(255,255,255, 0.5);
+        border-left: 1px solid rgb(255,255,255, 0.5);
+        border-bottom: 1px solid;
+        border-bottom-color:rgb(0,0,0, 0.5);
+        border-right: 1px solid;
+        border-right-color:  rgb(0,0,0, 0.5);
+        backdrop-filter: blur(5px);
+
+    }
+    .hell, .heaven {
+        width: 50%;
+        height: 100%;
+        border:none;
+        background: none;
+        margin: 0;
+    }
+    .hell:hover {
+        background: rgb(248, 3, 3, 0.509);
+    }
+    .heaven:hover {
+        background: rgba(14, 0, 164, 0.509);
+    }
+    .hellh1 {
+        display: block;
+        -webkit-text-stroke-width: 0.1px;
+        -webkit-text-stroke-color: white;
+    }
+
+    .heavenh1 {
+        display: block;
+        -webkit-text-stroke-width: 0.1px;
+        -webkit-text-stroke-color: white;
+
+    }   
+    .wrapper {
+        width: 100%;
+        height: 100%;
+        margin-top: 20px;
+        display: grid;
+        background-color: transparent;
+        grid-gap: 2px;
+        grid-template-columns: auto;
+        grid-template-rows: repeat(auto-fill, minmax(450px));
+        grid-template-areas:
+        'a b';
+        
+    }
+    .wrapper .merch, .wrapper .ticket {
+        width: 450px;
+        height: 450px;
+        z-index: 1;
+        transition: 0.2s;
+        padding: 0;
+        border-radius: 2em;
+        margin: 20px auto;
+        box-shadow: 20px 20px 50px rgb(0,0,0, 0.5); 
+        background: rgba(255, 255, 255, 0.105);
+        overflow: hidden;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        border-top: 1px solid rgb(255,255,255, 0.5);
+        border-left: 1px solid rgb(255,255,255, 0.5);
+        border-bottom: 1px solid;
+        border-bottom-color:rgb(0,0,0, 0.5);
+        border-right: 1px solid;
+        border-right-color:  rgb(0,0,0, 0.5);
+        backdrop-filter: blur(5px);
+    }
+    .merch {
+        grid-area: a;
+    }
+    .ticket {
+        grid-area: b;
+    }
+
+}
